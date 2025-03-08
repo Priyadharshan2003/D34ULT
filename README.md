@@ -6,7 +6,7 @@ The official template repository for Define 3.0
 
 
 
-# Eco-Dash
+# EcoFinX
  Cover Image  If applicable
 
 ### Team Information
@@ -24,13 +24,13 @@ The official template repository for Define 3.0
 ## Project Details
 
 ### Overview
-_The "Eco-dash" is a prototype fintech website designed to empower users with financial insights and seamless customer support through an AI-powered chatbot. It features a clean, intuitive interface with a dynamic dashboard displaying personalized financial data and sustainability metrics, promoting eco-conscious financial decisions. By integrating advanced technologies like NLP, predictive analytics, and blockchain, the project aims to redefine fintech accessibility while prioritizing sustainability._
+_The "EcoFinX" is a prototype fintech website designed to empower users with financial insights and seamless customer support through an AI-powered chatbot. It features a clean, intuitive interface with a dynamic dashboard displaying personalized financial data and sustainability metrics, promoting eco-conscious financial decisions. By integrating advanced technologies like NLP, predictive analytics, and blockchain, the project aims to redefine fintech accessibility while prioritizing sustainability._
 
 ### Problem Statement
 _Traditional fintech platforms often lack personalized, real-time financial guidance and fail to integrate sustainability into user experiences, leaving users uninformed about the environmental impact of their financial choices. Customer support is typically slow or generic, and dashboards are cluttered, making it hard for users to interpret data effectively. There’s a need for an innovative, user-friendly fintech solution that combines AI-driven insights, robust support, and a focus on sustainable finance to address these gaps._
 
 ### Solution
-_Eco-dash delivers a sophisticated yet accessible fintech website prototype that empowers users to manage their finances and embrace sustainability through an integrated AI-driven ecosystem. The solution features a clean, intuitive dashboard displaying real-time financial metrics (income/expenses, savings goals, investments) alongside sustainability metrics (carbon footprint, eco-score, green tips), ensuring users gain a holistic view of their wealth and its environmental impact. An AI-powered chatbot enhances the experience by providing instant customer support (FAQs), actionable financial tips, and personalized analysis, leveraging APIs like Climatiq for CO₂ data and ESG/Sustainability APIs for investment insights. To drive engagement, a gamification layer rewards users with points, badges, and leaderboard rankings for achieving financial and sustainability milestones—transforming responsible finance into an interactive, motivating journey. By combining cutting-edge technology with a sustainability-first approach, SustainaFin redefines fintech as a tool for both personal prosperity and planetary good._
+_EcoFinX delivers a sophisticated yet accessible fintech website prototype that empowers users to manage their finances and embrace sustainability through an integrated AI-driven ecosystem. The solution features a clean, intuitive dashboard displaying real-time financial metrics (income/expenses, savings goals, investments) alongside sustainability metrics (carbon footprint, eco-score, green tips), ensuring users gain a holistic view of their wealth and its environmental impact. An AI-powered chatbot enhances the experience by providing instant customer support (FAQs), actionable financial tips, and personalized analysis, leveraging APIs like Climatiq for CO₂ data and ESG/Sustainability APIs for investment insights. To drive engagement, a gamification layer rewards users with points, badges, and leaderboard rankings for achieving financial and sustainability milestones—transforming responsible finance into an interactive, motivating journey. By combining cutting-edge technology with a sustainability-first approach, SustainaFin redefines fintech as a tool for both personal prosperity and planetary good._
 
 ### Demo
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
@@ -125,7 +125,7 @@ flowchart TD
 ## Project Timeline
 ### Development Process and Milestones
 
-Eco_dash was built in a streamlined 24-hour sprint, balancing rapid development with robust functionality. The process followed a phased approach to deliver a fintech prototype with an AI chatbot, dashboard, and sustainability features.
+EcoFinX was built in a streamlined 24-hour sprint, balancing rapid development with robust functionality. The process followed a phased approach to deliver a fintech prototype with an AI chatbot, dashboard, and sustainability features.
 
 - **Phase 1: Planning & Setup (Hours 1-2)**  
   _Milestone_: Project initialized with Next.js, TypeScript, Tailwind CSS, Clerk Auth, and database (PostgreSQL/MongoDB) configured.  
