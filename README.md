@@ -74,26 +74,50 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 - **Clerk Auth** - _For secure, user-friendly authentication (login/signup flows)._
 - **Git/GitHub** - _For version control and collaboration._
   
-### Key Features
-- Feature 1
-- Feature 2
-- Feature 3
+## Key Features
 
-## Setup Instructions
+- **Interactive Dashboard**  
+  _A centralized hub displaying financial and sustainability insights, providing users with a clear overview of their money and environmental impact._
 
-### Prerequisites
-- Requirement 1
-- Requirement 2
-- Requirement 3
+- **Financial Metrics Tracking**  
+  _Monitor income/expenses, savings goals, and investments in real-time with intuitive visualizations for smarter financial decisions._
 
-### Installation 
-```bash
+- **Sustainability Metrics**  
+  _Track your carbon footprint, eco-score, and receive green tips powered by the Climatiq API, promoting eco-conscious living._
+
+- **AI-Powered Chatbot**  
+  _Get instant support with FAQs, actionable financial tips, and personalized AI analysis leveraging Gemini and ESG/Sustainability APIs._
+
+- **Investment Insights**  
+  _Receive tailored portfolio suggestions based on ESG data, helping users invest sustainably and profitably._
+
+- **Gamification (Coming Soon)**  
+  _Earn points and badges for achieving financial and sustainability goals, with a leaderboard to inspire friendly competition._
+
+## Flowchart
+Below is the system architecture visualized as a flowchart
 
 ```
-
-### Running the Project
-```bash
-
+flowchart TD
+    A[User] --> B[Dashboard]
+    B --> C[Financial Metrics]
+    B --> D[Sustainability Metrics]
+    B --> E[AI Chatbot]
+    C --> C1[Income/Expenses]
+    C --> C2[Savings Goals]
+    C --> C3[Investments]
+    D --> D1[Carbon Footprint]
+    D --> D2[Eco-Score]
+    D --> D3[Green Tips]
+    E --> E1[FAQs]
+    E --> E2[Actionable Tips]
+    E --> E3[AI Analysis]
+    D3 --> F[Climatiq API]
+    E3 --> G[ESG/Sustainability APIs]
+    F --> H[CO₂ Data]
+    G --> I[Investment Insights]
+    H --> J[Visualizations]
+    I --> K[Portfolio Suggestions]
 ```
 
 ## Additional Resources
