@@ -122,8 +122,27 @@ flowchart TD
 
 ## Additional Resources
 
-### Project Timeline
-_Brief overview of your development process and milestones_
+## Project Timeline
+### Development Process and Milestones
+
+SustainaFin was built in a streamlined 24-hour sprint, balancing rapid development with robust functionality. The process followed a phased approach to deliver a fintech prototype with an AI chatbot, dashboard, and sustainability features.
+
+- **Phase 1: Planning & Setup (Hours 1-2)**  
+  _Milestone_: Project initialized with Next.js, TypeScript, Tailwind CSS, Clerk Auth, and database (PostgreSQL/MongoDB) configured.  
+  Defined scope and set up API routes for core features.
+
+- **Phase 2: Core Development (Hours 3-6)**  
+  _Milestone_: Functional dashboard displaying financial metrics and sustainability data, plus an AI chatbot integrated with Gemini API for basic FAQs and advice.
+
+- **Phase 3: Enhancements (Hours 7-12)**  
+  _Milestone_: Added Climatiq API for carbon footprint tracking, ESG API mockups for investment insights, and initial gamification logic (points system via Firebase).
+
+- **Phase 4: Polish & Deployment (Hours 13-16)**  
+  _Milestone_: Deployed frontend on Vercel, backend on Railway, optimized UI/UX with Shadcn UI, and ensured mobile responsiveness.
+
+- **Phase 5: Finalization (Hours 17-24)**  
+  _Milestone_: Completed testing, produced demo video and pitch deck, and submitted the project with documentation highlighting sustainability impact.
+
 
 ### Challenges Faced
 _Discuss technical challenges and how you overcame them_
