@@ -1,0 +1,1 @@
+// Handles points/badges updates
