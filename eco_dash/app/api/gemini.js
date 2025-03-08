@@ -1,17 +1,26 @@
+// frontend/app/api/gemini/route.js (App Router) or frontend/pages/api/gemini.js (Pages Router)
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
-// Initialize the Gemini API client
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+// Initialize the Gemini API client (move outside handler for performance)
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY || "");
 
-export default async function handler(req, res) {
+export async function POST(req) {
+  // Ensure POST request
   if (req.method !== "POST") {
-    return res.status(405).json({ message: "Only POST requests allowed" });
+    return new Response(JSON.stringify({ message: "Only POST requests allowed" }), {
+      status: 405,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
-  const { message } = req.body;
+  // Parse the request body
+  const { message } = await req.json();
 
   if (!message) {
-    return res.status(400).json({ message: "Message is required" });
+    return new Response(JSON.stringify({ message: "Message is required" }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   try {
@@ -20,12 +29,21 @@ export default async function handler(req, res) {
 
     // Generate a response
     const result = await model.generateContent(message);
-    const response = await result.response;
+    const response = result.response;
     const text = response.text();
 
-    res.status(200).json({ response: text });
+    return new Response(JSON.stringify({ response: text }), {
+      status: 200,
+      headers: { "Content-Type": "application/json" },
+    });
   } catch (error) {
     console.error("Error calling Gemini API:", error);
-    res.status(500).json({ message: "Failed to generate response" });
+    return new Response(JSON.stringify({ message: "Failed to generate response", error: error.message }), {
+      status: 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 }
+
+// For Pages Router, export as default
+// export default handler;
