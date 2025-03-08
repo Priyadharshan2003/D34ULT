@@ -42,14 +42,38 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 ## Technical Implementation
 
 
-### Technologies Used
-- **Frontend**: [Technologies]
-- **Backend**: [Technologies]
-- **Database**: [Technologies]
-- **APIs**: [Technologies]
-- **DevOps**: [Technologies]
-- **Other Tools**: [Technologies]
+## Technologies Used
 
+### Frontend
+- **Next.js** - _For server-side rendering, static site generation, and a robust React framework._
+- **TypeScript** - _For type-safe JavaScript development, improving code reliability._
+- **JavaScript** - _Core scripting language for dynamic frontend features._
+
+### UI
+- **Tailwind CSS** - _For rapid, utility-first styling with a clean, responsive design._
+- **Shadcn UI** - _For pre-built, customizable UI components to accelerate dashboard and chatbot development._
+
+### Backend
+- **Node.js** - _Runtime for executing server-side JavaScript._
+- **Express.js** - _Lightweight framework for building API routes and handling backend logic._
+
+### Database
+- **PostgreSQL/MongoDB** - _PostgreSQL for structured financial/sustainability data or MongoDB for flexible, document-based storage._
+
+### APIs
+- **Gemini API** - _For AI-powered chatbot functionality, providing financial insights and NLP capabilities._
+- **Climatiq API** - _For calculating carbon footprints and integrating sustainability metrics._
+- **ESG/Sustainability APIs** - _For green investment insights and portfolio suggestions._
+
+### DevOps
+- **Vercel** - _For seamless frontend deployment, hosting, and domain management._
+- **Firebase** - _For real-time database features (e.g., gamification scores) and authentication backup._
+- **Inngest** - _For event-driven workflows, such as triggering gamification updates or API calls._
+
+### Other Tools
+- **Clerk Auth** - _For secure, user-friendly authentication (login/signup flows)._
+- **Git/GitHub** - _For version control and collaboration._
+  
 ### Key Features
 - Feature 1
 - Feature 2
