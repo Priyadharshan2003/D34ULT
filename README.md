@@ -16,10 +16,10 @@ The official template repository for Define 3.0
 ### Team Members
 | Name | Role | GitHub | LinkedIn |
 |------|------|--------|----------|
-| PRIYADHARSHAN | DEVELOPER | [@username](https://github.com/priyadharshan2003) | [Profile](https://in.linkedin.com/in/priyadharshan-chandranath) |
-| ABINANTHAN | DEVELOPER | [@username](https://github.com/Abinanthan47) | [Profile](https://www.linkedin.com/in/abinanthan-24btr/) |
-| DINESH | DESIGNER | [@username](https://github.com/Dinesh-DK124) | [Profile](https://in.linkedin.com/in/dinesh-dk-03979b265) |
-| SOORYA GANESH | CONTENT STRATEGY | [@username](https://github.com/Sooryaganesh114) | [Profile](https://www.linkedin.com/in/soorya-ganesh-sakthivel-94525a274) |
+| PRIYADHARSHAN | DEVELOPER | [@priyadharshan2003](https://github.com/priyadharshan2003) | [linkedin](https://in.linkedin.com/in/priyadharshan-chandranath) |
+| ABINANTHAN | DEVELOPER | [@Abinanthan47](https://github.com/Abinanthan47) | [linkedin](https://www.linkedin.com/in/abinanthan-24btr/) |
+| DINESH | DESIGNER | [@Dinesh-DK124](https://github.com/Dinesh-DK124) | [linkedin](https://in.linkedin.com/in/dinesh-dk-03979b265) |
+| SOORYA GANESH | CONTENT STRATEGY | [@Sooryaganesh114](https://github.com/Sooryaganesh114) | [linkedin](https://www.linkedin.com/in/soorya-ganesh-sakthivel-94525a274) |
 
 ## Project Details
 
