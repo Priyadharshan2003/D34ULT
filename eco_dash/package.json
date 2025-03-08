@@ -11,7 +11,11 @@
   "dependencies": {
     "@clerk/nextjs": "^6.12.4",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "@google/generative-ai": "^0.24.0",
+=======
+    "@prisma/client": "^6.4.1",
+>>>>>>> 2c5d137bc85da16b4326d0fc5ffadb76e20d0f82
 =======
     "@prisma/client": "^6.4.1",
 >>>>>>> 2c5d137bc85da16b4326d0fc5ffadb76e20d0f82
