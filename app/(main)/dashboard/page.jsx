@@ -13,6 +13,7 @@ import {
   BarChart2, CreditCard, AlertTriangle, Award, Activity
 } from "lucide-react";
 import { DashboardOverview } from "./_components/transaction-overview";
+import Chatbot from '../chatbot/page';
 
 // Demo data
 const creditScoreData = [
@@ -429,6 +430,7 @@ const DemoComponent = () => {
           </div>
         </div>
       </Card>
+      <Chatbot />
     </div>
   );
 };

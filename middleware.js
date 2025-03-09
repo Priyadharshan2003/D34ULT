@@ -45,9 +45,13 @@ export default createMiddleware(aj, clerk);
 
 export const config = {
   matcher: [
-    // Skip Next.js internals and all static files, unless found in search params
+    // Include all routes that should be protected by Clerk
     "/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)",
     // Always run for API routes
     "/(api|trpc)(.*)",
+    // Add any additional routes that require authentication
+    "/dashboard(.*)", // Ensure this is included
+    "/account(.*)",   // Ensure this is included
+    "/transaction(.*)", // Ensure this is included
   ],
 };
