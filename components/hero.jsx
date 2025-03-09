@@ -23,7 +23,7 @@ const HeroSection = () => {
       const scrollPosition = window.scrollY;
       const heroElement = heroRef.current;
       if (heroElement) {
-        heroElement.style.backgroundPositionY = `₹{scrollPosition * 0.5}px`;
+        heroElement.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
       }
     };
 
@@ -154,7 +154,7 @@ const HeroSection = () => {
               <div className="flex bg-gray-800/50 rounded-lg p-1 mb-4">
                 <button
                   onClick={() => setActiveTab("dashboard")}
-                  className={`flex-1 py-2 px-4 rounded-md transition-all ₹{
+                  className={`flex-1 py-2 px-4 rounded-md transition-all ${
                     activeTab === "dashboard" 
                     ? "bg-gradient-to-r from-green-500 to-green-600 text-white shadow" 
                     : "text-gray-300 hover:text-white"
@@ -164,7 +164,7 @@ const HeroSection = () => {
                 </button>
                 <button
                   onClick={() => setActiveTab("chatbot")}
-                  className={`flex-1 py-2 px-4 rounded-md transition-all ₹{
+                  className={`flex-1 py-2 px-4 rounded-md transition-all ${
                     activeTab === "chatbot" 
                     ? "bg-gradient-to-r from-green-500 to-green-600 text-white shadow" 
                     : "text-gray-300 hover:text-white"
@@ -189,7 +189,7 @@ const HeroSection = () => {
                     <div className="grid grid-cols-3 gap-3 mb-5">
                       <div className="bg-gray-800/60 p-3 rounded-lg border border-gray-700/50">
                         <div className="text-xs text-gray-400">Total Balance</div>
-                        <div className="text-xl font-bold text-white">₹24,562</div>
+                        <div className="text-xl font-bold text-white">$24,562</div>
                         <div className="text-xs text-green-400 flex items-center mt-1">
                           <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="mr-1">
                             <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
@@ -286,10 +286,10 @@ const HeroSection = () => {
                     {chatHistory.map((chat, index) => (
                       <div 
                         key={index} 
-                        className={`flex ₹{chat.role === "user" ? "justify-end" : "justify-start"}`}
+                        className={`flex ${chat.role === "user" ? "justify-end" : "justify-start"}`}
                       >
                         <div 
-                          className={`max-w-[80%] p-3 rounded-lg ₹{
+                          className={`max-w-[80%] p-3 rounded-lg ${
                             chat.role === "user" 
                               ? "bg-green-600 text-white" 
                               : "bg-gray-800 text-gray-200 border border-gray-700"
