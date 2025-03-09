@@ -1,7 +1,7 @@
 # Define 3.0
 
 ## EcoFinX
-![EcoFinX Banner](https://github.com/user-attachments/assets/8173bc16-418e-4912-b500-c6427e4ba4b6)
+![EcoFinX Banner](https://github.com/Priyadharshan2003/D34ULT/blob/main/landingpage.png)
 
 ## 👥 Team D34ULT
 
@@ -119,6 +119,13 @@ flowchart TD
     H --> J[Visualizations]
     I --> K[Portfolio Suggestions]
 ```
+
+##   Project Snapshots
+![Landing Page](https://github.com/Priyadharshan2003/D34ULT/blob/main/landingpage.png)
+![dashboard](https://github.com/Priyadharshan2003/D34ULT/blob/main/dashboard.png)
+![Ai_bot](https://github.com/Priyadharshan2003/D34ULT/blob/main/Ai_chat_bot.png)
+![EcoFinX Carbon Foot Print Tracking]()
+
 
 ## 🔮 Future Enhancements
 
