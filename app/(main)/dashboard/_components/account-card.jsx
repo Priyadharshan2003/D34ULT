@@ -1,10 +1,8 @@
+// app/dashboard/_components/account-card.tsx
 "use client";
 
-import { ArrowUpRight, ArrowDownRight, CreditCard } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { updateDefaultAccount } from "@/actions/account";
 import { Badge } from "@/components/ui/badge";
-import { useEffect } from "react";
-import useFetch from "@/hooks/use-fetch";
 import {
   Card,
   CardContent,
@@ -12,8 +10,11 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Switch } from "@/components/ui/switch";
+import useFetch from "@/hooks/use-fetch";
+import { ArrowDownRight, ArrowUpRight, CreditCard } from "lucide-react";
 import Link from "next/link";
-import { updateDefaultAccount } from "@/actions/account";
+import { useEffect } from "react";
 import { toast } from "sonner";
 
 export function AccountCard({ account }) {
@@ -27,11 +28,11 @@ export function AccountCard({ account }) {
   } = useFetch(updateDefaultAccount);
 
   const handleDefaultChange = async (event) => {
-    event.preventDefault(); // Prevent navigation
+    event.preventDefault();
 
     if (isDefault) {
-      toast.warning("You need atleast 1 default account");
-      return; // Don't allow toggling off the default account
+      toast.warning("You need at least 1 default account");
+      return;
     }
 
     await updateDefaultFn(id);
@@ -50,35 +51,55 @@ export function AccountCard({ account }) {
   }, [error]);
 
   return (
-    <Card className="hover:shadow-md transition-shadow group relative">
+    <Card className="hover:shadow-lg transition-all relative overflow-hidden group">
+      {isDefault && (
+        <div className="absolute top-2 right-2">
+          <Badge className="text-xs bg-primary/10 text-primary hover:bg-primary/15">
+            Default
+          </Badge>
+        </div>
+      )}
       <Link href={`/account/${id}`}>
         <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-          <CardTitle className="text-sm font-medium capitalize">
-            {name}
-          </CardTitle>
+          <div className="flex items-center gap-2">
+            <div className={`p-2 rounded-lg bg-primary/10`}>
+              <CreditCard className="h-5 w-5 text-primary" />
+            </div>
+            <CardTitle className="text-base font-semibold">{name}</CardTitle>
+          </div>
           <Switch
             checked={isDefault}
             onClick={handleDefaultChange}
             disabled={updateDefaultLoading}
+            className="data-[state=checked]:bg-primary/80"
           />
         </CardHeader>
         <CardContent>
-          <div className="text-2xl font-bold">
+          <div className="text-3xl font-bold mb-2">
             ${parseFloat(balance).toFixed(2)}
           </div>
-          <p className="text-xs text-muted-foreground">
-            {type.charAt(0) + type.slice(1).toLowerCase()} Account
-          </p>
+          <div className="flex gap-2">
+            <Badge variant="outline" className="capitalize">
+              {type.toLowerCase()}
+            </Badge>
+            <Badge variant="outline" className="space-x-1">
+              <ArrowUpRight className="h-3.5 w-3.5 text-green-500" />
+              <span>Income</span>
+            </Badge>
+            <Badge variant="outline" className="space-x-1">
+              <ArrowDownRight className="h-3.5 w-3.5 text-red-500" />
+              <span>Expense</span>
+            </Badge>
+          </div>
         </CardContent>
-        <CardFooter className="flex justify-between text-sm text-muted-foreground">
-          <div className="flex items-center">
-            <ArrowUpRight className="mr-1 h-4 w-4 text-green-500" />
-            Income
+        <CardFooter className="flex justify-between text-sm text-muted-foreground border-t pt-4">
+          <div className="flex items-center gap-1.5">
+            <div className="h-2.5 w-2.5 bg-green-500 rounded-full animate-pulse" />
+            <span>Active</span>
           </div>
-          <div className="flex items-center">
-            <ArrowDownRight className="mr-1 h-4 w-4 text-red-500" />
-            Expense
-          </div>
+          <p className="text-xs text-muted-foreground/70">
+            Last updated: {new Date().toLocaleDateString()}
+          </p>
         </CardFooter>
       </Link>
     </Card>

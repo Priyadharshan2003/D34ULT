@@ -25,7 +25,6 @@ const creditScoreData = [
   { name: 'Jul', score: 803 },
 ];
 
-
 const spendingByCategory = [
   { name: 'Housing', value: 35 },
   { name: 'Food', value: 20 },

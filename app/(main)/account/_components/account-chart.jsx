@@ -1,17 +1,5 @@
 "use client";
 
-import { useState, useMemo } from "react";
-import {
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
-import { format, subDays, startOfDay, endOfDay } from "date-fns";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Select,
@@ -20,6 +8,18 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { endOfDay, format, startOfDay, subDays } from "date-fns";
+import { useMemo, useState } from "react";
+import {
+  Bar,
+  BarChart,
+  CartesianGrid,
+  Legend,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from "recharts";
 
 const DATE_RANGES = {
   "7D": { label: "Last 7 Days", days: 7 },
@@ -76,9 +76,9 @@ export function AccountChart({ transactions }) {
   }, [filteredData]);
 
   return (
-    <Card>
+    <Card className="shadow-lg rounded-lg border border-gray-200">
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-7">
-        <CardTitle className="text-base font-normal">
+        <CardTitle className="text-lg font-semibold text-gray-800">
           Transaction Overview
         </CardTitle>
         <Select defaultValue={dateRange} onValueChange={setDateRange}>
@@ -97,25 +97,24 @@ export function AccountChart({ transactions }) {
       <CardContent>
         <div className="flex justify-around mb-6 text-sm">
           <div className="text-center">
-            <p className="text-muted-foreground">Total Income</p>
-            <p className="text-lg font-bold text-green-500">
+            <p className="text-gray-500">Total Income</p>
+            <p className="text-lg font-bold text-green-600">
               ${totals.income.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
-            <p className="text-muted-foreground">Total Expenses</p>
-            <p className="text-lg font-bold text-red-500">
+            <p className="text-gray-500">Total Expenses</p>
+            <p className="text-lg font-bold text-red-600">
               ${totals.expense.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
-            <p className="text-muted-foreground">Net</p>
+            <p className="text-gray-500">Net</p>
             <p
-              className={`text-lg font-bold ${
-                totals.income - totals.expense >= 0
-                  ? "text-green-500"
-                  : "text-red-500"
-              }`}
+              className={`text-lg font-bold ${totals.income - totals.expense >= 0
+                ? "text-green-600"
+                : "text-red-600"
+                }`}
             >
               ${(totals.income - totals.expense).toFixed(2)}
             </p>
@@ -133,19 +132,21 @@ export function AccountChart({ transactions }) {
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
+                stroke="#ccc"
               />
               <YAxis
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
                 tickFormatter={(value) => `$${value}`}
+                stroke="#ccc"
               />
               <Tooltip
                 formatter={(value) => [`$${value}`, undefined]}
                 contentStyle={{
-                  backgroundColor: "hsl(var(--popover))",
-                  border: "1px solid hsl(var(--border))",
-                  borderRadius: "var(--radius)",
+                  backgroundColor: "#fff",
+                  border: "1px solid #ccc",
+                  borderRadius: "8px",
                 }}
               />
               <Legend />
