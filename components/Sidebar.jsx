@@ -90,7 +90,7 @@ function SidebarDemo() {
 
   return (
     <div 
-      className={`h-screen transition-all duration-300 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex flex-col ${
+      className={`h-screen transition-all duration-300 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex flex-col ₹{
         collapsed ? "w-20" : "w-72"
       }`}
     >
@@ -140,20 +140,20 @@ function SidebarDemo() {
               <Link href={menu.path} key={menu.id} className="block">
                 <div
                   className={`flex items-center justify-between rounded-xl px-3 py-2.5 cursor-pointer group transition-colors
-                    ${path === menu.path 
+                    ₹{path === menu.path 
                       ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium" 
                       : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`${collapsed ? "mx-auto" : ""}`}>
-                      <menu.icon className={`h-5 w-5 ${path === menu.path ? "text-blue-600 dark:text-blue-400" : "text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"}`} />
+                    <div className={`₹{collapsed ? "mx-auto" : ""}`}>
+                      <menu.icon className={`h-5 w-5 ₹{path === menu.path ? "text-blue-600 dark:text-blue-400" : "text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"}`} />
                     </div>
                     {!collapsed && <span className="text-sm">{menu.name}</span>}
                   </div>
                   
                   {!collapsed && menu.badge && (
-                    <div className={`px-2 py-0.5 rounded-full text-xs ${
+                    <div className={`px-2 py-0.5 rounded-full text-xs ₹{
                       typeof menu.badge === 'string' 
                         ? "bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400" 
                         : "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
@@ -177,18 +177,18 @@ function SidebarDemo() {
               <Link href={menu.path} key={menu.id} className="block">
                 <div
                   className={`flex items-center justify-between rounded-xl px-3 py-2.5 cursor-pointer group transition-colors
-                    ${menu.isPro 
+                    ₹{menu.isPro 
                       ? "bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20" 
                       : ""
                     }
-                    ${path === menu.path 
+                    ₹{path === menu.path 
                       ? "bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 font-medium" 
                       : "text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800/50"
                     }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`${collapsed ? "mx-auto" : ""}`}>
-                      <menu.icon className={`h-5 w-5 ${
+                    <div className={`₹{collapsed ? "mx-auto" : ""}`}>
+                      <menu.icon className={`h-5 w-5 ₹{
                         menu.isPro 
                           ? "text-indigo-600 dark:text-indigo-400" 
                           : path === menu.path 
@@ -196,7 +196,7 @@ function SidebarDemo() {
                             : "text-slate-500 dark:text-slate-400 group-hover:text-slate-600 dark:group-hover:text-slate-300"
                       }`} />
                     </div>
-                    {!collapsed && <span className={`text-sm ${menu.isPro ? "text-indigo-600 dark:text-indigo-400 font-medium" : ""}`}>{menu.name}</span>}
+                    {!collapsed && <span className={`text-sm ₹{menu.isPro ? "text-indigo-600 dark:text-indigo-400 font-medium" : ""}`}>{menu.name}</span>}
                   </div>
                   
                   {!collapsed && menu.isPro && (

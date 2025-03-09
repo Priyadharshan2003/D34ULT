@@ -99,24 +99,24 @@ export function AccountChart({ transactions }) {
           <div className="text-center">
             <p className="text-gray-500">Total Income</p>
             <p className="text-lg font-bold text-green-600">
-              ${totals.income.toFixed(2)}
+              ₹{totals.income.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
             <p className="text-gray-500">Total Expenses</p>
             <p className="text-lg font-bold text-red-600">
-              ${totals.expense.toFixed(2)}
+              ₹{totals.expense.toFixed(2)}
             </p>
           </div>
           <div className="text-center">
             <p className="text-gray-500">Net</p>
             <p
-              className={`text-lg font-bold ${totals.income - totals.expense >= 0
+              className={`text-lg font-bold ₹{totals.income - totals.expense >= 0
                 ? "text-green-600"
                 : "text-red-600"
                 }`}
             >
-              ${(totals.income - totals.expense).toFixed(2)}
+              ₹{(totals.income - totals.expense).toFixed(2)}
             </p>
           </div>
         </div>
@@ -138,11 +138,11 @@ export function AccountChart({ transactions }) {
                 fontSize={12}
                 tickLine={false}
                 axisLine={false}
-                tickFormatter={(value) => `$${value}`}
+                tickFormatter={(value) => `₹₹{value}`}
                 stroke="#ccc"
               />
               <Tooltip
-                formatter={(value) => [`$${value}`, undefined]}
+                formatter={(value) => [`₹₹{value}`, undefined]}
                 contentStyle={{
                   backgroundColor: "#fff",
                   border: "1px solid #ccc",

@@ -135,9 +135,9 @@ export function BudgetProgress({ initialBudget, currentExpenses }) {
               <>
                 <CardDescription className="text-base">
                   {initialBudget
-                    ? `$${currentExpenses.toFixed(
+                    ? `₹₹{currentExpenses.toFixed(
                         2
-                      )} of $${initialBudget.amount.toFixed(2)} spent`
+                      )} of ₹₹{initialBudget.amount.toFixed(2)} spent`
                     : "No budget set"}
                 </CardDescription>
                 <Button
@@ -156,8 +156,8 @@ export function BudgetProgress({ initialBudget, currentExpenses }) {
         {initialBudget && (
           <div className="bg-gray-50 dark:bg-gray-800/50 p-3 rounded-lg shadow-inner flex flex-col items-center">
             <div className="text-xs text-gray-500 dark:text-gray-400">Remaining</div>
-            <div className={`text-lg font-bold ${remainingBudget > 0 ? 'text-green-500' : 'text-red-500'}`}>
-              ${remainingBudget.toFixed(2)}
+            <div className={`text-lg font-bold ₹{remainingBudget > 0 ? 'text-green-500' : 'text-red-500'}`}>
+              ₹{remainingBudget.toFixed(2)}
             </div>
           </div>
         )}
@@ -169,7 +169,7 @@ export function BudgetProgress({ initialBudget, currentExpenses }) {
             <div className="relative pt-1">
               <Progress
                 value={percentUsed}
-                extraStyles={`${
+                extraStyles={`₹{
                   percentUsed >= 90
                     ? "bg-red-500"
                     : percentUsed >= 75
@@ -181,7 +181,7 @@ export function BudgetProgress({ initialBudget, currentExpenses }) {
               {/* Circle indicator on progress bar */}
               <div 
                 className="absolute top-0 h-5 w-5 rounded-full bg-white dark:bg-gray-900 shadow-md border-2 border-primary flex items-center justify-center transform -translate-y-1/4"
-                style={{ left: `${Math.min(percentUsed, 98)}%` }}
+                style={{ left: `₹{Math.min(percentUsed, 98)}%` }}
               >
                 <div className="h-2 w-2 bg-primary rounded-full"></div>
               </div>
