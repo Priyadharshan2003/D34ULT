@@ -123,14 +123,14 @@ export function DashboardOverview({ accounts, transactions }) {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm font-medium text-blue-600 dark:text-blue-400">Total Balance</p>
-                <h3 className="text-2xl font-bold mt-1">₹{netAmount.toFixed(2)}</h3>
+                <h3 className="text-2xl font-bold mt-1">${netAmount.toFixed(2)}</h3>
                 <div className="flex items-center mt-1">
                   {netAmount >= 0 ? (
                     <TrendingUp className="h-4 w-4 text-emerald-500 mr-1" />
                   ) : (
                     <TrendingDown className="h-4 w-4 text-rose-500 mr-1" />
                   )}
-                  <span className={`text-xs font-medium ₹{netAmount >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
+                  <span className={`text-xs font-medium ${netAmount >= 0 ? 'text-emerald-500' : 'text-rose-500'}`}>
                     {netPercentage}% {netAmount >= 0 ? 'saved' : 'overspent'}
                   </span>
                 </div>
@@ -150,7 +150,7 @@ export function DashboardOverview({ accounts, transactions }) {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm font-medium text-emerald-600 dark:text-emerald-400">Income</p>
-                <h3 className="text-2xl font-bold mt-1">₹{totalIncome.toFixed(2)}</h3>
+                <h3 className="text-2xl font-bold mt-1">${totalIncome.toFixed(2)}</h3>
                 <div className="flex items-center mt-1">
                   <ArrowUpRight className="h-4 w-4 text-emerald-500 mr-1" />
                   <span className="text-xs font-medium text-emerald-500">This month</span>
@@ -168,7 +168,7 @@ export function DashboardOverview({ accounts, transactions }) {
             <div className="flex justify-between items-start">
               <div>
                 <p className="text-sm font-medium text-rose-600 dark:text-rose-400">Expenses</p>
-                <h3 className="text-2xl font-bold mt-1">₹{totalExpense.toFixed(2)}</h3>
+                <h3 className="text-2xl font-bold mt-1">${totalExpense.toFixed(2)}</h3>
                 <div className="flex items-center mt-1">
                   <ArrowDownRight className="h-4 w-4 text-rose-500 mr-1" />
                   <span className="text-xs font-medium text-rose-500">This month</span>
@@ -230,7 +230,7 @@ export function DashboardOverview({ accounts, transactions }) {
                     axisLine={false} 
                     tickLine={false}
                     tick={{ fontSize: 12, fill: 'var(--muted-foreground)' }}
-                    tickFormatter={(value) => `₹₹{value}`}
+                    tickFormatter={(value) => `$${value}`}
                   />
                   <Tooltip
                     content={({ active, payload }) => {
@@ -238,10 +238,10 @@ export function DashboardOverview({ accounts, transactions }) {
                         return (
                           <div className="rounded-lg border bg-background p-3 shadow-md">
                             <p className="font-medium">{payload[0].payload.name}</p>
-                            <p className="text-sm text-emerald-500">Income: ₹{payload[0].value.toFixed(2)}</p>
-                            <p className="text-sm text-rose-500">Expense: ₹{payload[1].value.toFixed(2)}</p>
+                            <p className="text-sm text-emerald-500">Income: ${payload[0].value.toFixed(2)}</p>
+                            <p className="text-sm text-rose-500">Expense: ${payload[1].value.toFixed(2)}</p>
                             <p className="text-xs text-muted-foreground mt-1">
-                              Net: ₹{(payload[0].value - payload[1].value).toFixed(2)}
+                              Net: ${(payload[0].value - payload[1].value).toFixed(2)}
                             </p>
                           </div>
                         );
@@ -313,12 +313,12 @@ export function DashboardOverview({ accounts, transactions }) {
                       dataKey="value"
                       labelLine={false}
                       label={({ name, percent }) => 
-                        percent > 0.05 ? `₹{name} ₹{(percent * 100).toFixed(0)}%` : ''
+                        percent > 0.05 ? `${name} ${(percent * 100).toFixed(0)}%` : ''
                       }
                     >
                       {pieChartData.map((entry, index) => (
                         <Cell
-                          key={`cell-₹{index}`}
+                          key={`cell-${index}`}
                           fill={COLORS[index % COLORS.length]}
                           stroke="var(--background)"
                           strokeWidth={2}
@@ -338,7 +338,7 @@ export function DashboardOverview({ accounts, transactions }) {
                                 />
                                 <p className="font-medium">{payload[0]?.name}</p>
                               </div>
-                              <p className="text-sm mt-1">₹{payload[0]?.value.toFixed(2)}</p>
+                              <p className="text-sm mt-1">${payload[0]?.value.toFixed(2)}</p>
                               <p className="text-xs text-muted-foreground">
                                 {((payload[0]?.value / total) * 100).toFixed(1)}% of total
                               </p>
@@ -410,7 +410,7 @@ export function DashboardOverview({ accounts, transactions }) {
                   className="flex items-center justify-between p-4 rounded-lg hover:bg-muted/20 transition-colors cursor-pointer border border-transparent hover:border-slate-200 dark:hover:border-slate-800"
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`p-2 rounded-xl ₹{transaction.type === 'EXPENSE' ? 'bg-rose-500/10' : 'bg-emerald-500/10'}`}>
+                    <div className={`p-2 rounded-xl ${transaction.type === 'EXPENSE' ? 'bg-rose-500/10' : 'bg-emerald-500/10'}`}>
                       {transaction.type === "EXPENSE" ? (
                         <ArrowDownRight className="h-5 w-5 text-rose-500" />
                       ) : (
@@ -430,8 +430,8 @@ export function DashboardOverview({ accounts, transactions }) {
                       </div>
                     </div>
                   </div>
-                  <div className={`font-semibold ₹{transaction.type === 'EXPENSE' ? 'text-rose-500' : 'text-emerald-500'}`}>
-                    {transaction.type === 'EXPENSE' ? '-' : '+'} ₹{transaction.amount.toFixed(2)}
+                  <div className={`font-semibold ${transaction.type === 'EXPENSE' ? 'text-rose-500' : 'text-emerald-500'}`}>
+                    {transaction.type === 'EXPENSE' ? '-' : '+'} ${transaction.amount.toFixed(2)}
                   </div>
                 </div>
               ))
