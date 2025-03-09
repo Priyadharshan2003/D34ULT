@@ -126,7 +126,7 @@ flowchart TD
 ![Landing Page](https://github.com/Priyadharshan2003/D34ULT/blob/main/landingpage.png)
 ![dashboard](https://github.com/Priyadharshan2003/D34ULT/blob/main/dashboard.png)
 ![Ai_bot](https://github.com/Priyadharshan2003/D34ULT/blob/main/Ai_chat_bot.png)
-![EcoFinX Carbon Foot Print Tracking]()
+![EcoFinX Carbon Foot Print Tracking](https://github.com/user-attachments/assets/99af7c5a-2d42-444f-bd67-de0e48024670)
 
 
 ## 🔮 Future Enhancements
