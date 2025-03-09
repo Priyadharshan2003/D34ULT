@@ -22,7 +22,7 @@ const MainLayout = ({ children }) => {
   return (
     <div className="flex min-h-screen">
       {/* Sidebar component */}
-      <SidebarDemo />
+      <SidebarDemo className="sticky"/>
       
       {/* Main content area with container and margin */}
       <div className="flex-1 transition-all duration-300 max-w-7xl">
