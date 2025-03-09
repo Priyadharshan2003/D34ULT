@@ -1,10 +1,7 @@
-
 # Define 3.0
-The official template repository for Define 3.0
-
-![DefineHack 2025 Logo](https://github.com/user-attachments/assets/8173bc16-418e-4912-b500-c6427e4ba4b6)
 
 ## EcoFinX
+![EcoFinX Banner](https://github.com/user-attachments/assets/8173bc16-418e-4912-b500-c6427e4ba4b6)
 
 ## 👥 Team D34ULT
 
@@ -15,7 +12,7 @@ The official template repository for Define 3.0
 | DINESH | DESIGNER | [@Dinesh-DK124](https://github.com/Dinesh-DK124) | [LinkedIn](https://in.linkedin.com/in/dinesh-dk-03979b265) |
 | SOORYA GANESH | CONTENT STRATEGY | [@Sooryaganesh114](https://github.com/Sooryaganesh114) | [LinkedIn](https://www.linkedin.com/in/soorya-ganesh-sakthivel-94525a274) |
 
-![EcoFinX Banner](https://github.com/user-attachments/assets/8173bc16-418e-4912-b500-c6427e4ba4b6)
+
 
 ## Where Finance Meets Sustainability
 
