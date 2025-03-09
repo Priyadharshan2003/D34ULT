@@ -2,10 +2,8 @@
 
 import { UserButton } from "@clerk/nextjs";
 import {
-  CircleDollarSign,
   LayoutGrid,
   PiggyBank,
-  ReceiptText,
   ShieldCheck,
   ChevronRight,
   LogOut,
@@ -140,7 +138,7 @@ function SidebarDemo({ onCollapseChange }) {
                 </svg>
               </div>
               <div className="flex flex-col">
-                <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">Fintrack</span>
+                <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">EcoFinX</span>
                 <span className="text-xs text-slate-500 dark:text-slate-400">Financial Insights</span>
               </div>
             </div>
@@ -278,7 +276,7 @@ function SidebarDemo({ onCollapseChange }) {
         </div>
       </div>
 
-      {/* Financial Snapshot Card */}
+      {/* Financial Snapshot Card
       {!collapsed && (
         <div className="mx-4 mb-6 p-4 rounded-xl bg-gradient-to-r from-blue-500 to-emerald-500 shadow-xl shadow-blue-500/10">
           <div className="flex flex-col text-white">
@@ -312,7 +310,7 @@ function SidebarDemo({ onCollapseChange }) {
             </button>
           </div>
         </div>
-      )}
+      )} */}
 
       {/* User Profile */}
       <div className="border-t border-slate-200 dark:border-slate-800 p-4">

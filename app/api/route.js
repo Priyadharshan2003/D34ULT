@@ -1,5 +1,5 @@
 import { getDashboardData } from "@/actions/dashboard"; // Adjust the import based on your actual file structure
-import { auth } from "@clerk/nextjs"; // Assuming you're using Clerk for authentication
+import { auth } from "@clerk/nextjs/server"; // Assuming you're using Clerk for authentication
 
 export default async function handler(req, res) {
   const { userId } = await auth();

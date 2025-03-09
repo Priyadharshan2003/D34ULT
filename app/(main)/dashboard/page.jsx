@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { getUserAccounts, getDashboardData } from "@/actions/dashboard";
 import { getCurrentBudget } from "@/actions/budget";
 import { AccountCard } from "./_components/account-card";
@@ -42,11 +42,11 @@ export default async function DashboardPage() {
             <button className="flex items-center gap-2 bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors">
               <Plus className="h-4 w-4" />
               <span>New Account</span>
-            </button>
+          </button>
           </CreateAccountDrawer>
-        </div>
-      </div>
-
+              </div>
+            </div>
+            
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <Card className="bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-950 dark:to-blue-900 border-blue-200 dark:border-blue-800 shadow-md">
@@ -68,7 +68,7 @@ export default async function DashboardPage() {
               <h3 className="text-sm font-medium text-green-800 dark:text-green-300">Monthly Income</h3>
               <div className="p-2 bg-green-200 dark:bg-green-800 rounded-full">
                 <ArrowUp className="h-4 w-4 text-green-700 dark:text-green-300" />
-              </div>
+            </div>
             </div>
             <p className="text-3xl font-bold text-green-900 dark:text-green-100">${monthlyIncome.toFixed(2)}</p>
             <p className="text-xs text-green-600 dark:text-green-400 mt-2">This month's earnings</p>

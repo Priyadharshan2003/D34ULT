@@ -19,7 +19,7 @@ function CO2FinTechDashboard() {
   // Fetch user data on component mount
   useEffect(() => {
     fetchUserData();
-  }, [timeRange]);
+  }, [fetchUserData]);
 
   // Simulate API call to fetch user data
   const fetchUserData = () => {
