@@ -20,6 +20,8 @@
 
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 
+[![Provided live project link]()
+
 ## 🌟 Key Features
 
 - **AI-Powered Financial Assistant** - Get personalized financial guidance and instant support through our advanced AI chatbot
