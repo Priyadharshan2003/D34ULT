@@ -28,7 +28,7 @@ const chatbotFAQs = [
     },
     {
         question: "How much does EcoFinX cost?",
-        answer: "EcoFinX offers three pricing tiers: Free (basic budgeting and expense tracking), Pro (₹9.99/month with AI insights and automated savings), and Enterprise (₹29.99/month with advanced features and dedicated support). You can start with a 14-day free trial of any paid plan."
+        answer: "EcoFinX offers three pricing tiers: Free (basic budgeting and expense tracking), Pro ($9.99/month with AI insights and automated savings), and Enterprise ($29.99/month with advanced features and dedicated support). You can start with a 14-day free trial of any paid plan."
     },
     {
         question: "Can I connect multiple bank accounts?",
@@ -61,7 +61,7 @@ const customerSupportResponses = {
         verification: "Account verification usually takes 1-2 business days. If it's been longer, I can check the status for you. Could you please provide your email address associated with your account?"
     },
     billing: {
-        subscription: "I can help with your subscription concerns. EcoFinX offers three plans: Free, Pro (₹9.99/month), and Enterprise (₹29.99/month). Would you like to upgrade, downgrade, or cancel your current subscription?",
+        subscription: "I can help with your subscription concerns. EcoFinX offers three plans: Free, Pro ($9.99/month), and Enterprise ($29.99/month). Would you like to upgrade, downgrade, or cancel your current subscription?",
         payment: "For payment issues, please check that your card details are up-to-date in your account settings. If you're seeing an unexpected charge, I can help investigate that for you. Could you provide more details about the specific payment issue?",
         refund: "Our refund policy allows for refunds within 14 days of subscription payment. I'd be happy to process a refund request for you. Could you confirm when you made the payment and why you're requesting a refund?"
     },
@@ -854,7 +854,7 @@ export default function Chatbot() {
                         </button>
                         <button
                             type="submit"
-                            className={`bg-blue-700 hover:bg-blue-800 text-white p-2 rounded-r-lg ${isLoading || isListening ? "opacity-50 cursor-not-allowed" : ""
+                            className={`bg-blue-700 hover:bg-blue-800 text-white p-2 rounded-r-lg ₹{(isLoading || isListening) ? "opacity-50 cursor-not-allowed" : ""
                                 }`}
                             disabled={isLoading || isListening}
                         >

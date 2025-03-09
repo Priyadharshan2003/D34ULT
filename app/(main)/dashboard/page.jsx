@@ -1,13 +1,15 @@
 import { Suspense } from "react";
-import { getUserAccounts } from "@/actions/dashboard";
-import { getDashboardData } from "@/actions/dashboard";
+import { getUserAccounts, getDashboardData } from "@/actions/dashboard";
 import { getCurrentBudget } from "@/actions/budget";
 import { AccountCard } from "./_components/account-card";
 import { CreateAccountDrawer } from "@/components/create-account-drawer";
 import { BudgetProgress } from "./_components/budget-progress";
 import { Card, CardContent } from "@/components/ui/card";
-import { Plus, CreditCard, ArrowUp, ArrowDown, Wallet } from "lucide-react";
+import { Plus, ArrowUp, ArrowDown, Wallet } from "lucide-react";
 import { DashboardOverview } from "./_components/transaction-overview";
+import Chatbot from "../chatbot/page";
+// Temporarily comment out the problematic import
+// import Chatbot from "../chatbot/page";
 
 export default async function DashboardPage() {
   const [accounts, transactions] = await Promise.all([
@@ -97,7 +99,7 @@ export default async function DashboardPage() {
 
       {/* Dashboard Overview */}
       <DashboardOverview
-        accounts={accounts}
+        accounts={accounts || []}
         transactions={transactions || []}
       />
 
@@ -119,12 +121,13 @@ export default async function DashboardPage() {
               </CardContent>
             </Card>
           </CreateAccountDrawer>
-          {accounts.length > 0 &&
-            accounts?.map((account) => (
+          {accounts && accounts.length > 0 &&
+            accounts.map((account) => (
               <AccountCard key={account.id} account={account} />
             ))}
         </div>
       </div>
+      <section><Chatbot></Chatbot></section>
     </div>
   );
 }
