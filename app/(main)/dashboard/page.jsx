@@ -8,7 +8,6 @@ import { BudgetProgress } from "./_components/budget-progress";
 import { Card, CardContent } from "@/components/ui/card";
 import { Plus, CreditCard, ArrowUp, ArrowDown, Wallet } from "lucide-react";
 import { DashboardOverview } from "./_components/transaction-overview";
-import Chatbot from '../chatbot/page';
 
 export default async function DashboardPage() {
   const [accounts, transactions] = await Promise.all([
@@ -126,64 +125,6 @@ export default async function DashboardPage() {
             ))}
         </div>
       </div>
-<<<<<<< HEAD
-=======
-      
-      {/* Sustainable Investment Opportunity Card */}
-      <Card className="border-0 shadow-lg overflow-hidden bg-gradient-to-r from-green-100 to-emerald-50 dark:from-green-900/30 dark:to-emerald-900/20">
-        <div className="p-6 md:p-8 md:flex items-center gap-8">
-          <div className="md:flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <Leaf className="h-5 w-5 text-green-600" />
-              <span className="text-sm font-semibold text-green-700 dark:text-green-400">ECO-FRIENDLY OPPORTUNITY</span>
-            </div>
-            <h3 className="text-xl md:text-2xl font-bold mb-3">Green Investment Portfolio</h3>
-            <p className="text-gray-600 dark:text-gray-300 mb-4">
-              Invest in sustainable companies with 12% higher returns than standard portfolios, while reducing your carbon footprint.
-            </p>
-            <div className="flex flex-wrap gap-3 mb-6">
-              <span className="px-3 py-1 bg-white dark:bg-green-900/30 rounded-full text-xs font-medium text-green-600 dark:text-green-400">
-                Low Minimum
-              </span>
-              <span className="px-3 py-1 bg-white dark:bg-green-900/30 rounded-full text-xs font-medium text-green-600 dark:text-green-400">
-                ESG Certified
-              </span>
-              <span className="px-3 py-1 bg-white dark:bg-green-900/30 rounded-full text-xs font-medium text-green-600 dark:text-green-400">
-                Carbon Negative
-              </span>
-            </div>
-            <button className="px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors font-medium">
-              Learn More
-            </button>
-          </div>
-          <div className="hidden md:block md:w-1/3 h-56">
-            <ResponsiveContainer width="100%" height="100%">
-              <LineChart data={co2EmissionsData}>
-                <defs>
-                  <linearGradient id="greenInvestmentGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="5%" stopColor="#22C55E" stopOpacity={0.8}/>
-                    <stop offset="95%" stopColor="#22C55E" stopOpacity={0.1}/>
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" vertical={false} opacity={0.1} />
-                <XAxis dataKey="name" axisLine={false} tickLine={false} />
-                <YAxis axisLine={false} tickLine={false} />
-                <Tooltip />
-                <Line
-                  type="monotone"
-                  dataKey="value"
-                  stroke="#059669"
-                  strokeWidth={2}
-                  dot={{ fill: "#059669", strokeWidth: 2, r: 4 }}
-                  activeDot={{ r: 6 }}
-                />
-              </LineChart>
-            </ResponsiveContainer>
-          </div>
-        </div>
-      </Card>
-      <Chatbot />
->>>>>>> 10cea021f91b5c087cb276994268d6fbf720ac16
     </div>
   );
 }
