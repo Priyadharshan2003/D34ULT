@@ -158,7 +158,7 @@ export default function Chatbot() {
     useEffect(() => {
         setMessages([{
             role: "assistant",
-            content: `₹{languagePhrases[currentLanguage].welcome}₹{languagePhrases[currentLanguage].options}`
+            content: `${languagePhrases[currentLanguage].welcome}${languagePhrases[currentLanguage].options}`
         }]);
     }, [currentLanguage]);
 
@@ -240,7 +240,7 @@ export default function Chatbot() {
             if (languageVoice) {
                 utterance.voice = languageVoice;
             } else {
-                console.warn(`No voice available for language: ₹{currentLanguage}`);
+                console.warn(`No voice available for language: ${currentLanguage}`);
             }
 
             utterance.onstart = () => setIsSpeaking(true);
@@ -412,9 +412,9 @@ export default function Chatbot() {
 
         try {
             // Enhance the prompt with EcoFinX context and sustainability focus
-            const enhancedPrompt = `As the EcoFinX AI assistant focusing on financial insights, provide a helpful response about ₹{prompt}. Include information about sustainable finance when relevant. Remember you are a financial assistant with a focus on both financial health and environmental sustainability.`;
+            const enhancedPrompt = `As the EcoFinX AI assistant focusing on financial insights, provide a helpful response about ${prompt}. Include information about sustainable finance when relevant. Remember you are a financial assistant with a focus on both financial health and environmental sustainability.`;
 
-            const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=₹{GEMINI_API_KEY}`, {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${GEMINI_API_KEY}`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -438,7 +438,7 @@ export default function Chatbot() {
             if (!response.ok) {
                 const errorData = await response.json().catch(() => ({}));
                 console.error("Gemini API HTTP error:", response.status, errorData);
-                throw new Error(`API returned ₹{response.status}: ₹{JSON.stringify(errorData)}`);
+                throw new Error(`API returned ${response.status}: ${JSON.stringify(errorData)}`);
             }
 
             const data = await response.json();
@@ -458,7 +458,7 @@ export default function Chatbot() {
                     // Add a random sustainability tip 30% of the time if response doesn't already contain sustainability content
                     if (!responseText.toLowerCase().includes('sustain') && Math.random() < 0.3) {
                         const randomTip = sustainabilityTips[Math.floor(Math.random() * sustainabilityTips.length)];
-                        responseText = `₹{responseText}\n\n₹{randomTip}`;
+                        responseText = `${responseText}\n\n${randomTip}`;
                     }
 
                     return responseText;
@@ -482,7 +482,7 @@ export default function Chatbot() {
 
             // Add a sustainability tip to the fallback response
             const randomTip = sustainabilityTips[Math.floor(Math.random() * sustainabilityTips.length)];
-            return `I'm your AI financial assistant focused on sustainable finance. I can help with budgeting, expense tracking, eco-friendly investments, and reducing your financial carbon footprint. What specific question can I help you with today?\n\n₹{randomTip}`;
+            return `I'm your AI financial assistant focused on sustainable finance. I can help with budgeting, expense tracking, eco-friendly investments, and reducing your financial carbon footprint. What specific question can I help you with today?\n\n${randomTip}`;
         }
     };
 
@@ -513,7 +513,7 @@ export default function Chatbot() {
 
         // Notify about language change
         const langInfo = supportedLanguages.find(lang => lang.code === langCode);
-        addAssistantMessage(`Language changed to ₹{langInfo.name} ₹{langInfo.flag}`);
+        addAssistantMessage(`Language changed to ${langInfo.name} ${langInfo.flag}`);
     };
 
     return (
@@ -521,7 +521,7 @@ export default function Chatbot() {
             {/* Chatbot Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 ₹{isOpen ? "bg-red-500 hover:bg-red-600" : "bg-blue-700 hover:bg-blue-800"
+                className={`fixed bottom-6 right-6 z-50 p-4 rounded-full shadow-lg transition-all duration-300 ${isOpen ? "bg-red-500 hover:bg-red-600" : "bg-blue-700 hover:bg-blue-800"
                     } text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500`}
             >
                 {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
@@ -529,7 +529,7 @@ export default function Chatbot() {
 
             {/* Chatbot Window */}
             <div
-                className={`fixed bottom-24 right-6 z-50 w-full max-w-md bg-white rounded-xl shadow-2xl transition-all duration-300 transform ₹{isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
+                className={`fixed bottom-24 right-6 z-50 w-full max-w-md bg-white rounded-xl shadow-2xl transition-all duration-300 transform ${isOpen ? "scale-100 opacity-100" : "scale-95 opacity-0 pointer-events-none"
                     } overflow-hidden flex flex-col border border-gray-200`}
                 style={{ maxHeight: "calc(100vh - 150px)" }}
             >
@@ -574,7 +574,7 @@ export default function Chatbot() {
                         {/* Voice toggle */}
                         <button
                             onClick={() => setVoiceEnabled(!voiceEnabled)}
-                            className={`text-xs mr-2 px-2 py-1 rounded flex items-center ₹{voiceEnabled
+                            className={`text-xs mr-2 px-2 py-1 rounded flex items-center ${voiceEnabled
                                 ? "bg-blue-600 text-white"
                                 : "bg-blue-800 text-blue-200 hover:bg-blue-700"
                                 }`}
@@ -588,7 +588,7 @@ export default function Chatbot() {
                             <div className="flex mr-2">
                                 <button
                                     onClick={() => switchAssistanceMode("financial")}
-                                    className={`text-xs mr-2 px-2 py-1 rounded ₹{assistantMode === "financial"
+                                    className={`text-xs mr-2 px-2 py-1 rounded ${assistantMode === "financial"
                                         ? "bg-blue-600 text-white"
                                         : "bg-blue-800 text-blue-200 hover:bg-blue-700"
                                         }`}
@@ -597,7 +597,7 @@ export default function Chatbot() {
                                 </button>
                                 <button
                                     onClick={() => switchAssistanceMode("support")}
-                                    className={`text-xs px-2 py-1 rounded ₹{assistantMode === "support"
+                                    className={`text-xs px-2 py-1 rounded ${assistantMode === "support"
                                         ? "bg-blue-600 text-white"
                                         : "bg-blue-800 text-blue-200 hover:bg-blue-700"
                                         }`}
@@ -621,7 +621,7 @@ export default function Chatbot() {
                     {messages.map((message, index) => (
                         <div
                             key={index}
-                            className={`mb-4 flex ₹{message.role === "user" ? "justify-end" : "justify-start"
+                            className={`mb-4 flex ${message.role === "user" ? "justify-end" : "justify-start"
                                 }`}
                         >
                             {message.role === "assistant" && (
@@ -630,7 +630,7 @@ export default function Chatbot() {
                                 </div>
                             )}
                             <div
-                                className={`rounded-lg px-4 py-3 max-w-[75%] ₹{message.role === "user"
+                                className={`rounded-lg px-4 py-3 max-w-[75%] ${message.role === "user"
                                     ? "bg-blue-700 text-white rounded-br-none"
                                     : "bg-white border border-gray-200 rounded-bl-none"
                                     }`}
@@ -798,26 +798,26 @@ export default function Chatbot() {
                         ) : (
                             <>
                                 <button
-                                    onClick={() => setInput("Account issues")}
-                                    className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
-                                >
-                                    <Shield size={20} className="text-blue-700 mb-1" />
-                                    <span className="text-xs text-gray-600">Account</span>
-                                </button>
-                                <button
-                                    onClick={() => setInput("Billing questions")}
-                                    className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
-                                >
-                                    <CircleDollarSign size={20} className="text-green-600 mb-1" />
-                                    <span className="text-xs text-gray-600">Billing</span>
-                                </button>
-                                <button
-                                    onClick={() => setInput("Technical support")}
-                                    className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
-                                >
-                                    <HelpCircle size={20} className="text-red-600 mb-1" />
-                                    <span className="text-xs text-gray-600">Technical</span>
-                                </button>
+                                onClick={() => setInput("Account issues")}
+                                className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
+                            >
+                                <Shield size={20} className="text-blue-700 mb-1" />
+                                <span className="text-xs text-gray-600">Account</span>
+                            </button>
+                            <button
+                                onClick={() => setInput("Billing questions")}
+                                className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
+                            >
+                                <CircleDollarSign size={20} className="text-green-600 mb-1" />
+                                <span className="text-xs text-gray-600">Billing</span>
+                            </button>
+                            <button
+                                onClick={() => setInput("Technical support")}
+                                className="flex flex-col items-center justify-center p-2 rounded-lg hover:bg-gray-50"
+                            >
+                                <HelpCircle size={20} className="text-red-600 mb-1" />
+                                <span className="text-xs text-gray-600">Technical</span>
+                            </button>
                             </>
                         )}
                     </div>
@@ -844,17 +844,17 @@ export default function Chatbot() {
                         <button
                             type="button"
                             onClick={isListening ? stopListening : startListening}
-                            className={`p-2 ₹{isListening
+                            className={`p-2 ${isListening
                                 ? "bg-red-500 hover:bg-red-600"
                                 : "bg-blue-100 hover:bg-blue-200"
-                                } text-₹{isListening ? "white" : "blue-700"} border-t border-b border-gray-300`}
+                                } text-${isListening ? "white" : "blue-700"} border-t border-b border-gray-300`}
                             disabled={isLoading}
                         >
                             <Mic size={20} className={isListening ? "animate-pulse" : ""} />
                         </button>
                         <button
                             type="submit"
-                            className={`bg-blue-700 hover:bg-blue-800 text-white p-2 rounded-r-lg ₹{(isLoading || isListening) ? "opacity-50 cursor-not-allowed" : ""
+                            className={`bg-blue-700 hover:bg-blue-800 text-white p-2 rounded-r-lg ${isLoading || isListening ? "opacity-50 cursor-not-allowed" : ""
                                 }`}
                             disabled={isLoading || isListening}
                         >
